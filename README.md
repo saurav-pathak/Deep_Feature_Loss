@@ -19,7 +19,9 @@ Following steps need to be followed for downloading and extracting dataset and p
 
 ## Denoising Network Dataset folder structure
 
+Following steps need to followed for using downloading and using denoising dataset
 
+1. Create four folders ./NSDTSEA/trainset_clean, ./NSDTSEA/trainset_noisy, ./NSDTSEA/valset_clean, ./NSDTSEA/valset_noisy, and populate all the folders with Voice Bank corpus dataset
 
 
 
