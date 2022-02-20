@@ -27,8 +27,8 @@ Following steps need to followed for using downloading and using denoising datas
 
 # Original Paper
 
-Paper Title: Speech Denoising with Deep Feature Losses
-You can refer the paper from this link: https://arxiv.org/abs/1806.10522
+1. Paper Title: Speech Denoising with Deep Feature Losses
+2. You can refer the paper from this link: https://arxiv.org/abs/1806.10522
 
 
 
