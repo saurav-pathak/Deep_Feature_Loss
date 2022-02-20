@@ -25,8 +25,8 @@ SAVE_MODEL_EPOCH = 10
 print('This model does not use featureloss model in evaluation mode and use 6 layers for loss cal................')
 
 # Command line options
-data_folder = "/home/sauravpathak/data/NSDTSEA/"
-loss_model_path = "./models/loss_model_without_reg_mod_data.pth"
+data_folder = "./NSDTSEA/"
+loss_model_path = "./models/loss_model_without_reg.pth"
 output_folder = "./models/"
 
 print('Dataset folder is "' + data_folder + '/"', flush=True)
@@ -37,10 +37,6 @@ print('Folder to save model is "' + output_folder + '/"', flush=True)
 training_set, validation_set = loadEntireDataList(dataFolder = data_folder)
 training_set, validation_set = loadEntireData(training_set, validation_set)
 
-#training_set['inaudio'] = [torch.tensor(i, device = cuda) for i in training_set['inaudio']]
-#training_set['outaudio'] = [torch.tensor(i, device = cuda) for i in training_set['outaudio']]
-#validation_set['inaudio'] = [torch.tensor(i, device = cuda) for i in validation_set['inaudio']]
-#validation_set['outaudio'] = [torch.tensor(i, device = cuda) for i in validation_set['outaudio']]
 
 if DN_LOSS_TYPE == "FL":
 	loss_weights = np.ones(DN_LOSS_LAYERS)
@@ -131,10 +127,10 @@ def featureLoss(actualOutput, modelOutput, lossWeights):
 load_saved_model = False
 
 if load_saved_model:
-	model_state = torch.load(output_folder + "/denoising_model_modi_lib_R6.pth")
+	model_state = torch.load(output_folder + "/denoising_model_lib.pth")
 	denoising_model.load_state_dict(model_state)
 	print('old model loaded........................................')
-	optimizer_state = torch.load('./optimizer/' + "/denoising_optimizer_modi_lib_R6.pth")
+	optimizer_state = torch.load('./optimizer/' + "/denoising_optimizer_lib.pth")
 	optimizer.load_state_dict(optimizer_state)
 	print('old optimizer loaded........................................')
 
@@ -313,8 +309,8 @@ for epoch in tqdm(range(1, total_epochs+1)):
 
 	model_state = denoising_model.state_dict()
 	optimizer_state = optimizer.state_dict()
-	torch.save(model_state, output_folder + "/denoising_model_modi_lib_R6.pth")
-	torch.save(optimizer_state, './optimizer/' + "/denoising_optimizer_modi_lib_R6.pth") 
+	torch.save(model_state, output_folder + "/denoising_model_lib.pth")
+	torch.save(optimizer_state, './optimizer/' + "/denoising_optimizer_lib.pth") 
     
 	print("Model and Loss saving done", flush=True)
 	print("\n", flush=True)
