@@ -1,5 +1,5 @@
 # Deep_Feature_Loss
-PyTorch Implementation of Deep Feature Loss based model
+PyTorch Implementation of Speech Denoising Deep Feature Loss model
 
 # Contents
 1) ./code_scripts/train_featurelossnet_without_reg.py: script for training featureloss network
