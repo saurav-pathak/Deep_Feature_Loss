@@ -8,6 +8,8 @@ PyTorch Implementation of Deep Feature Loss based model
 4) ./code_scripts/load_data_lib.py: script for loading and preprocessing data
 5) ./code_scripts/helper.py: script containing other useful functions
 6) ./code_scripts/dataext.ipynb: jupyter notebook for extracting audio data from zip files and preprocess them
+7) ./code_scripts/models/denosing_model_v1_lib.pth: trained denoising model
+8) ./code_scripts/models/loss_model_without_red_mod_data.pth: trained loss model
 
 ## Featureoss Network Dataset folder structure
 
