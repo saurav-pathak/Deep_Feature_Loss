@@ -152,10 +152,10 @@ for task in range(no_of_tasks):
     optimizer.append(torch.optim.Adam(feature_loss_model.parameters(), lr=learning_rate))
 
 if load_saved_model:
-    model_state = torch.load(out_folder + "/loss_model_without_reg_mod_data_test.pth")
+    model_state = torch.load(out_folder + "/loss_model_without_reg.pth")
     feature_loss_model.load_state_dict(model_state)
     print('old model loaded........................................')
-    optimizer_state = torch.load('./optimizer/' + "/optimizer_without_reg_mod_data_test.pth")
+    optimizer_state = torch.load('./optimizer/' + "/optimizer_without_reg.pth")
     optimizer[0].load_state_dict(optimizer_state['task1_optimizer'])
     optimizer[1].load_state_dict(optimizer_state['task2_optimizer'])
     print('old optimizer loaded........................................')
@@ -258,9 +258,9 @@ for epoch in tqdm(range(1, Epochs+1)):
     #### SAVE MODEL HERE
     if epoch%5==0:
         print("Saving the model .....", flush=True)
-        torch.save(feature_loss_model.state_dict(), out_folder + "/loss_model_without_reg_mod_data_test.pth")
+        torch.save(feature_loss_model.state_dict(), out_folder + "/loss_model_without_reg.pth")
         optimizer_state = {'task1_optimizer': optimizer[0].state_dict(), 'task2_optimizer': optimizer[1].state_dict()}
-        torch.save(optimizer_state, './optimizer/' + "/optimizer_without_reg_mod_data_test.pth")
+        torch.save(optimizer_state, './optimizer/' + "/optimizer_without_reg.pth")
         print("Model saving done", flush=True)
         print("\n", flush=True)
     
