@@ -2,12 +2,12 @@
 PyTorch Implementation of Deep Feature Loss based model
 
 ## Folder Structure
-./code_scripts/train_featurelossnet_without_reg.py: script for training featureloss network
-./code_scripts/train_denoisingnet_modi_lib.py: script for training denoising network
-./code_scripts/models_mod.py: script containing denoising and featureloss networks
-./code_scripts/load_data_lib.py: script for loading and preprocessing data
-./code_scripts/helper.py: script containing other useful functions
-./code_scripts/dataext.ipynb: jupyter notebook for extracting audio data from zip files and preprocess them
+1) ./code_scripts/train_featurelossnet_without_reg.py: script for training featureloss network
+2) ./code_scripts/train_denoisingnet_modi_lib.py: script for training denoising network
+3) ./code_scripts/models_mod.py: script containing denoising and featureloss networks
+4) ./code_scripts/load_data_lib.py: script for loading and preprocessing data
+5) ./code_scripts/helper.py: script containing other useful functions
+6) ./code_scripts/dataext.ipynb: jupyter notebook for extracting audio data from zip files and preprocess them
 
 ## Featureoss Network Dataset folder structure
 
